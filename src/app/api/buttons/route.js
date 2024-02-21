@@ -13,7 +13,6 @@ export async function POST(req){
 
     for (const button of data) {
         if(button.id === undefined){
-            console.log("mi tuuuut")
             const post = await prisma.infoButton.create({
                data: {
                    displayMode: button.displayMode,
@@ -25,7 +24,6 @@ export async function POST(req){
            })
         }
     }
-
     // const newButton = {
     //     displayMode: data.displayMode,
     //     typeKeyboard: data.typeKeyboard,
@@ -64,7 +62,6 @@ export async function PUT(req){
 
     const data= await req.json()
     const id = data.id
-    console.log("data", data)
 
     const Buttons = await prisma.infoButton.update({
         where:{
